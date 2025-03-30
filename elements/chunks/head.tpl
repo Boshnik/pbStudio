@@ -18,3 +18,9 @@
         font-family: "Roboto", serif
     }
 </style>
+
+{*FetchIt*}
+<script src="/assets/components/fetchit/js/fetchit.min.js"></script>
+<script async src="/assets/components/fetchit/lib/notyf.min.js"></script>
+<link rel="preload" href="/assets/components/fetchit/lib/notyf.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/components/fetchit/lib/notyf.min.css"></noscript>

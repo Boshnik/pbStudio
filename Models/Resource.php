@@ -97,6 +97,67 @@ class Resource extends Model
                                 ->default('---')
                         ])
                 ]),
+            Block::make('Hero')
+                ->group('Content')
+                ->fields([
+                    Field::make('Title')->required(),
+                    Field::make('Description')
+                        ->type('richtext')
+                        ->required(),
+                ]),
+            Block::make('Team')
+                ->group('Table')
+                ->fields([
+                    Field::make('Team')
+                        ->type('table')
+                        ->fields([
+                            Field::make('Type')
+                                ->type('select')
+                                ->options([
+                                    'image' => 'Image',
+                                    'text' => 'Text',
+                                    'vacancy' => 'Vacancy',
+                                ])
+                                ->default('image')
+                                ->required(),
+                            Field::make('Image')
+                                ->type('image')
+                                ->sourcePath('/assets/images/')
+                                ->required()
+                                ->hidden('type', '!=', 'image'),
+                            Field::make('Name')
+                                ->width(50)
+                                ->required()
+                                ->hidden('type', '!=', 'image'),
+                            Field::make('Position')
+                                ->width(50)
+                                ->required()
+                                ->hidden('type', '!=', 'image'),
+                            Field::make('Title')
+                                ->required()
+                                ->hidden('type', '=', 'image'),
+                            Field::make('Description')
+                                ->type('richtext')
+                                ->required()
+                                ->hidden('type', '=', 'image'),
+                            Field::make('Button')
+                                ->type('button')
+                                ->required()
+                                ->hidden('type', '!=', 'vacancy'),
+                        ])
+                        ->columns([
+                            Column::make('Image')
+                                ->label('Image / Title')
+                                ->renderIf([
+                                    Column::make('Image')->render('image'),
+                                    Column::make('Title')
+                                ]),
+                            Column::make('Team')->group([
+                                Column::make('Name'),
+                                Column::make('Position')
+                            ])
+                        ])
+                ]),
         ];
     }
 
