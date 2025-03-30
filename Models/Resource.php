@@ -65,7 +65,7 @@ class Resource extends Model
                                 ->hidden('type', '!=', 'text'),
                             Field::make('Position')
                                 ->type('select')
-                                ->values([
+                                ->options([
                                     '' => 'Center',
                                     'mt-auto' => 'Bottom'
                                 ])
