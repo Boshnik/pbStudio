@@ -19,8 +19,8 @@
     }
 </style>
 
-{*FetchIt*}
-<script src="/assets/components/fetchit/js/fetchit.min.js"></script>
-<script async src="/assets/components/fetchit/lib/notyf.min.js"></script>
-<link rel="preload" href="/assets/components/fetchit/lib/notyf.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/assets/components/fetchit/lib/notyf.min.css"></noscript>
+{*SweetAlert2*}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+{*Form*}
+<script src="/assets/components/pageblocks/pageblocks.js" defer></script>

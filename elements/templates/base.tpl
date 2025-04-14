@@ -38,5 +38,9 @@
     {insert 'chunks/modal.tpl'}
 {/block}
 
+{block 'scripts'}
+    {insert 'chunks/scripts.tpl'}
+{/block}
+
 </body>
 </html>

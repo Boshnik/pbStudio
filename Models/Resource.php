@@ -2,14 +2,15 @@
 
 namespace PageBlocks\App\Models;
 
+use Boshnik\PageBlocks\Models\ResourceModel;
 use Boshnik\PageBlocks\Builders\Block;
-use Boshnik\PageBlocks\Builders\Column;
-use Boshnik\PageBlocks\Builders\Field;
-use Boshnik\PageBlocks\Builders\Panel;
-use Boshnik\PageBlocks\Builders\Tab;
 use Boshnik\PageBlocks\Builders\UTM;
+use Boshnik\PageBlocks\Builders\Tab;
+use Boshnik\PageBlocks\Builders\Panel;
+use Boshnik\PageBlocks\Builders\Field;
+use Boshnik\PageBlocks\Builders\Column;
 
-class Resource extends Model
+class Resource extends ResourceModel
 {
     public static function getBlocks(): array
     {
@@ -175,5 +176,4 @@ class Resource extends Model
     {
         return [];
     }
-
 }

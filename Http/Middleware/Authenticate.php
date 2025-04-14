@@ -2,12 +2,14 @@
 
 namespace PageBlocks\App\Http\Middleware;
 
+use Boshnik\PageBlocks\Facades\Request;
+
 class Authenticate extends Middleware
 {
-    public function handle(array $request = [])
+    public function handle(Request $request)
     {
         if (!app()->user->id) {
-            return response()->setUnauthorized()->send();
+            return response()->setUnauthorized();
         }
 
         return true;

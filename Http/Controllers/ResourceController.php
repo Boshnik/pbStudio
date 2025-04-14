@@ -2,6 +2,8 @@
 
 namespace PageBlocks\App\Http\Controllers;
 
+use Boshnik\PageBlocks\Facades\Request;
+
 class ResourceController extends Controller
 {
     public $classKey = \modResource::class;
