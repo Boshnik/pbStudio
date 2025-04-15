@@ -167,6 +167,27 @@ class Resource extends ResourceModel
                             ])
                         ])
                 ]),
+
+            Block::make('Portfolio')
+                ->fields([
+                    Field::make('Items')
+                        ->type('table')
+                        ->fields([
+                            Field::make('Title')
+                                ->required(),
+
+                            Field::make('Image')
+                                ->type('image')
+                                ->sourcePath('/assets/images/')
+                                ->required(),
+                        ])
+                        ->columns([
+                            Column::make('Title'),
+                            Column::make('Image')
+                                ->render('image')
+                                ->width(100),
+                        ])
+                ])
         ];
     }
 
