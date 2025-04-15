@@ -19,8 +19,8 @@
     }
 </style>
 
+{*Form*}
+<script src="/assets/components/pageblocks/js/web/pageblocks.js" defer></script>
+
 {*SweetAlert2*}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-
-{*Form*}
-<script src="/assets/components/pageblocks/pageblocks.js" defer></script>

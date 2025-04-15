@@ -35,6 +35,7 @@ class Resource extends ResourceModel
                     ])
                     ->pageSize(10)
                 ]),
+
             Block::make('Services')
                 ->fields([
                     Field::make('Services')
@@ -98,16 +99,16 @@ class Resource extends ResourceModel
                                 ->default('---')
                         ])
                 ]),
+
             Block::make('Hero')
-                ->group('Content')
                 ->fields([
                     Field::make('Title')->required(),
                     Field::make('Description')
                         ->type('richtext')
                         ->required(),
                 ]),
+
             Block::make('Team')
-                ->group('Table')
                 ->fields([
                     Field::make('Team')
                         ->type('table')
@@ -121,26 +122,32 @@ class Resource extends ResourceModel
                                 ])
                                 ->default('image')
                                 ->required(),
+
                             Field::make('Image')
                                 ->type('image')
                                 ->sourcePath('/assets/images/')
                                 ->required()
                                 ->hidden('type', '!=', 'image'),
+
                             Field::make('Name')
                                 ->width(50)
                                 ->required()
                                 ->hidden('type', '!=', 'image'),
+
                             Field::make('Position')
                                 ->width(50)
                                 ->required()
                                 ->hidden('type', '!=', 'image'),
+
                             Field::make('Title')
                                 ->required()
                                 ->hidden('type', '=', 'image'),
+
                             Field::make('Description')
                                 ->type('richtext')
                                 ->required()
                                 ->hidden('type', '=', 'image'),
+
                             Field::make('Button')
                                 ->type('button')
                                 ->required()
@@ -153,6 +160,7 @@ class Resource extends ResourceModel
                                     Column::make('Image')->render('image'),
                                     Column::make('Title')
                                 ]),
+
                             Column::make('Team')->group([
                                 Column::make('Name'),
                                 Column::make('Position')
