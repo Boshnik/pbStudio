@@ -24,6 +24,7 @@ class MainMenu extends MenuModel
                         ->fields([
                             Field::make('formname')
                                 ->type('hidden'),
+
                             Field::make('createdon')
                                 ->label('Date')
                                 ->type('date')
@@ -31,11 +32,13 @@ class MainMenu extends MenuModel
                                 ->storage('timestamp')
                                 ->dateFormat('Y-m-d, H:i')
                                 ->readOnly(),
+
                             Field::make('IP')
                                 ->width(50)
                                 ->readOnly(),
-                            Field::make('Name'),
-                            Field::make('Email'),
+
+                            Field::make('Name')->width(50),
+                            Field::make('Email')->width(50),
                             Field::make('Message')
                                 ->type('textarea')
                                 ->height(50),
