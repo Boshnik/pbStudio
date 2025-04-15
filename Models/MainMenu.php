@@ -17,6 +17,7 @@ class MainMenu extends MenuModel
             Menu::make('Forms')
                 ->title('Сохраненные формы')
                 ->description('Сохраненные формы')
+                ->parent('components')
                 ->fields([
                     Field::make('Forms')
                         ->type('table')
