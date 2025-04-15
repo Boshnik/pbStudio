@@ -187,7 +187,78 @@ class Resource extends ResourceModel
                                 ->render('image')
                                 ->width(100),
                         ])
+                ]),
+
+            Block::make('Visual Impact')
+                ->permissions([
+                    'resource' => 4
                 ])
+                ->fields([
+                    Field::make('Title')->required(),
+                    Field::make('Description')
+                        ->type('richtext')
+                        ->required(),
+                    Field::make('Image')
+                        ->type('image')
+                        ->sourcePath('/assets/images/')
+                        ->width(80)
+                        ->required(),
+                    Field::make('Button')
+                        ->type('button')
+                        ->width(20)
+                        ->required()
+                ]),
+
+            Block::make('Headline First')
+                ->permissions([
+                    'resource' => 4
+                ])
+                ->fields([
+                    Field::make('Title')
+                        ->width(80)
+                        ->required(),
+                    Field::make('Button')
+                        ->type('button')
+                        ->width(20)
+                        ->required(),
+                    Field::make('Description')
+                        ->type('richtext')
+                        ->required()
+                ]),
+
+            Block::make('Balanced Content')
+                ->permissions([
+                    'resource' => 4
+                ])
+                ->fields([
+                    Field::make('Image')
+                        ->type('image')
+                        ->sourcePath('/assets/images/')
+                        ->width(80)
+                        ->required(),
+                    Field::make('Title')->required(),
+                    Field::make('Description')
+                        ->type('richtext')
+                        ->required(),
+                    Field::make('Button')
+                        ->type('button')
+                        ->width(20)
+                        ->required(),
+                ]),
+
+            Block::make('Key Benefits')
+                ->permissions([
+                    'resource' => 4
+                ])
+                ->fields([
+                    Field::make('Title')->required(),
+                    Field::make('Description')
+                        ->type('richtext')
+                        ->required(),
+                    Field::make('Button')
+                        ->type('button')
+                        ->required(),
+                ]),
         ];
     }
 
