@@ -15,7 +15,7 @@ class ResourceController extends Controller
             'deleted' => 0,
         ];
         if (empty($alias)) {
-            $where['id'] = $this->modx->getOption('site_start', null, 1, 1);
+            $where['id'] = $this->modx->getOption('site_start', null, 1, true);
         } else {
             $where['alias'] = $alias;
         }
@@ -26,6 +26,6 @@ class ResourceController extends Controller
 
         $this->modx->resource = updateResource($resource);
 
-        return response()->view('templates/base');
+        return view('templates/base');
     }
 }
