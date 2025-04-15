@@ -27,7 +27,7 @@ class FormController extends Controller
 
         // Сохраняем форму в таблицу значений
         $form = $this->modx->newObject(\pbTableValue::class, [
-            'model_type' => 'Menu', // Тип модели
+            'model_type' => 'pbMenu', // Тип модели
             // 'model_type' => 'MODX\Revolution\modDocument', Если таблица в на странице ресурса
             // 'model_type' => 'MODX\Revolution\modUser', Если форма на странице пользователя
             'field_name' => 'forms', // Имя поля таблицы
