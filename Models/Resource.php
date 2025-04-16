@@ -236,13 +236,17 @@ class Resource extends ResourceModel
                         ->sourcePath('/assets/images/')
                         ->width(80)
                         ->required(),
-                    Field::make('Title')->required(),
-                    Field::make('Description')
-                        ->type('richtext')
-                        ->required(),
+
                     Field::make('Button')
                         ->type('button')
                         ->width(20)
+                        ->required(),
+
+                    Field::make('Title')
+                        ->required(),
+
+                    Field::make('Description')
+                        ->type('richtext')
                         ->required(),
                 ]),
 
@@ -259,6 +263,29 @@ class Resource extends ResourceModel
                         ->type('button')
                         ->required(),
                 ]),
+
+            Block::make('Contacts')
+                ->fields([
+                    Field::make('Address')
+                        ->required(),
+
+                    Field::make('Phone')
+                        ->width(50)
+                        ->required(),
+
+                    Field::make('Email')
+                        ->width(50)
+                        ->required(),
+
+                    Field::make('Map')
+                        ->type('map')
+                        ->center('50.4500336,30.5241361')
+                        ->layer('dark')
+                        ->icon('/assets/images/logo.svg')
+                        ->iconSize('25,25')
+                        ->zoom(6)
+                        ->required(),
+                ])
         ];
     }
 
