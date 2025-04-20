@@ -14,11 +14,22 @@
                     'level' => 2,
                     'tpl' => '@INLINE <li class="nav-item level-{$level}">
                                     <a class="nav-link{$resourse_id === $id ? " active": ""}" href="{$uri}" {$attributes}>{$menutitle ?: $pagetitle}</a>
-                                </li>'
+                                </li>',
                     'tplParent' => '@INLINE <li class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" {$attributes}>{$menutitle ?: $pagetitle}</a>
                                     <ul class="dropdown-menu">{$wrapper}</ul>
                                 </li>'
+                ]}
+            </ul>
+            <ul class="navbar-nav ms-auto d-flex align-items-center list-unstyled mb-0">
+                {'!pbLang' | snippet: [
+                    'tpl' => '@INLINE <li class="nav-item">
+                            <a class="nav-link {$activeCls}"
+                                lang="{$key}"
+                                href="{$url}"
+                            >{$value}</a>
+                        </li>',
+                    'showCurrent' => 1
                 ]}
             </ul>
         </div>
