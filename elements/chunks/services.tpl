@@ -9,7 +9,7 @@
                 {/if}
             {else}
                 <img loading="lazy"
-                     src="{$item.image.url}"
+                     src="/{$item.image.url}"
                      class="img-fluid mx-auto"
                      width="236"
                      height="236"
