@@ -15,6 +15,10 @@ class ResourceController extends Controller
         $this->modx->config['cultureKey'] = $this->modx->getOption('cultureKey');
         $this->modx->context->set('key', $this->modx->getOption('default_context'));
 
+        if ($this->modx->resource->id === 10) {
+            return response()->view('templates/test');
+        }
+
         return response()->view('templates/base');
     }
 
@@ -29,6 +33,13 @@ class ResourceController extends Controller
         $this->modx->context->set('key', $context);
 
         return response()->view('templates/base');
+    }
+
+    public function sitemap()
+    {
+        return response($this->modx->runSnippet('pbSitemap'), 200, [
+            'Content-Type' => 'application/xml; charset=utf-8',
+        ]);
     }
 
     private function getResource(string $alias = '')
