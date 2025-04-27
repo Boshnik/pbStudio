@@ -35,6 +35,13 @@ class ResourceController extends Controller
         return response()->view('templates/base');
     }
 
+    public function sitemap()
+    {
+        return response($this->modx->runSnippet('pbSitemap'), 200, [
+            'Content-Type' => 'application/xml; charset=utf-8',
+        ]);
+    }
+
     private function getResource(string $alias = '')
     {
         $where = [
